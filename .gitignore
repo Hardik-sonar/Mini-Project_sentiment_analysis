@@ -1,5 +1,10 @@
-   .env
-   *.pem
-   *.json.key
-   __pycache__/
-   venv/
+.env
+*.pem
+*.json.key
+__pycache__/
+*.pyc
+.venv/
+venv/
+local_results/
+*.zip
+SocialPulse_Mini_Project_Instructions_UPDATED.md
