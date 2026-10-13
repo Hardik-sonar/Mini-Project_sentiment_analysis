@@ -13,7 +13,7 @@
       var s = document.createElement("span"); s.className = "spinner"; statusEl.appendChild(s);
     }
     statusEl.appendChild(document.createTextNode(text));
-    statusEl.hidden = false;
+    statusEl.hidden = false; statusEl.style.display = "";
   }
 
   function card(cls, label, value, pct) {
@@ -106,7 +106,7 @@
     var warnings = [];
     if (data.summary.failed) warnings.push(data.summary.failed + " comment(s) could not be analyzed and are excluded from the percentages.");
     if (!data.storage.saved) warnings.push("Results could not be saved to storage.");
-    if (warnings.length) setStatus("warn", warnings.join(" ")); else statusEl.hidden = true;
+    if (warnings.length) setStatus("warn", warnings.join(" ")); else { statusEl.hidden = true; statusEl.style.display = "none"; }
   }
 
   form.addEventListener("submit", function (e) {
