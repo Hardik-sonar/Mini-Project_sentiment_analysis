@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SocialPulse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>SocialPulse</h1>
+    <p>Paste a YouTube link and see how viewers feel, one comment at a time.</p>
+  </header>
+
+  <main>
+    <form id="form" class="panel" novalidate>
+      <label for="url">YouTube video URL</label>
+      <div class="row">
+        <input id="url" type="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" required>
+        <button id="go" type="submit">Analyze Comments</button>
+      </div>
+      <p class="hint">Analyzes up to 200 top-level comments per video.</p>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+    <section id="results" hidden>
+      <div class="cards" id="cards"></div>
+
+      <div class="grid">
+        <div class="panel chart-box">
+          <h2>Sentiment split</h2>
+          <canvas id="chart" aria-label="Sentiment doughnut chart" role="img"></canvas>
+        </div>
+        <div class="panel">
+          <h2>Run details</h2>
+          <dl id="meta" class="meta"></dl>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="table-head">
+          <h2>Comments</h2>
+          <div class="filters" id="filters" role="group" aria-label="Filter by sentiment"></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Comment</th><th>Sentiment</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
