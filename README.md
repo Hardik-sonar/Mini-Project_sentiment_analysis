@@ -36,8 +36,10 @@ The original plan used GCP Cloud Natural Language; Cloudflare Workers AI replace
 
 - Paste any YouTube URL (`watch?v=`, `youtu.be`, `shorts`, `embed`, `live`).
 - Up to **200** top-level comments per video, each classified individually.
-- Dashboard: counts, percentages, doughnut chart, run details, filterable comment table (All / Positive / Negative / Neutral / Failed).
-- Dark/light theme.
+- Dashboard: video thumbnail, overall mood verdict with net score (% positive − % negative), counts and percentages, doughnut chart, run details.
+- Comment list with sentiment filters (with counts), text search with highlighting, and CSV / JSON export.
+- Staged loading indicator with elapsed time.
+- Dark/light theme (follows the system, with a manual toggle that is remembered).
 - Results persisted to private S3 with the run ID shown in the UI.
 - Clear error messages: invalid link, comments disabled, video not found, quota exceeded, server misconfiguration.
 
